@@ -2,22 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The app is designed light-only for now (public page and dashboards). Without this,
+   phones in dark mode rendered dark text on a dark background. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-stone-50 font-sans text-stone-900 antialiased;
 }
 
 @layer utilities {
